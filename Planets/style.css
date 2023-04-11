@@ -1,0 +1,285 @@
+body {
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.planets-container {
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+
+    transform:scaleX(5);
+}
+
+.sun {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(240, 209, 32);
+    transform: scaleX(0.2);
+    box-shadow: 0 0 60px rgb(253, 203, 163), 0 0 98px rgb(184, 160, 26);
+
+}
+
+.planet {
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    transform: scaleX(0.2);
+}
+
+.planet:after {
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+}
+
+
+
+
+.route {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: rotate 12s infinite linear;
+}
+
+.planet-container {
+    width:60px;
+    height:60px;
+    animation: correct 12s infinite linear;
+    position: absolute;
+}
+
+
+
+#first-planet-container {
+    left:85px;
+
+}
+
+#second-planet-container {
+    left:42.5px;
+    
+}
+
+#third-planet-container {
+    left:65px;
+    top:100px;
+    
+}
+
+
+.planet-index {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+
+}
+
+#first-planet {
+     background: linear-gradient(#da1f1f, #1729f1);
+     animation: firstPlanetRender infinite;
+}
+
+
+#second-planet {
+    background: linear-gradient(#53d842, #34f8e4);
+}
+
+#third-planet {
+    background: linear-gradient(#d21dff, #e5da91);
+}
+
+#first-planet-index {
+    animation: hideFirstPlanet 12s infinite;
+}
+
+#second-planet-index {
+    animation: hideSecondPlanet 12s infinite;
+}
+
+#third-planet-index {
+    animation: hideThirdPlanet 12s infinite;
+}
+
+
+
+
+
+    
+@keyframes firstPlanetRender {
+    0% {
+        background: linear-gradient(to left top, blue, red);
+    }
+    12% {
+        background-color: linear-gradient(to left top, blue, red);
+    }
+    12.1% {
+        background-color: linear-gradient(to left top, blue, red);
+    }
+    62% {
+        background-color: linear-gradient(to left top, blue, red);
+    }
+    62.1% {
+        background-color: linear-gradient(to left top, blue, red);
+    }
+    
+    100% {
+        background-color: linear-gradient(to left top, blue, red);
+    }
+    
+}
+
+@keyframes firstPlanetRenderRotater {
+    0% { transform: scaleX(-0.2); background-color: blue ;}
+    12% { transform: scaleX(-1); background-color: blue ;}
+    12.1% { transform: scaleX(1); background-color: blue ;}
+
+    37% { transform: scaleX(0); background-color: blue ;}
+    37.1% { transform: scaleX(0); background-color: red ;}
+
+
+    62% { transform: scaleX(-1); background-color: red ;}
+    62.1% { transform: scaleX(1); background-color:red;}
+
+    87% { transform: scaleX(0); background-color: red ;}
+    87.1% { transform: scaleX(0); background-color: red ;}
+
+    
+    100% { transform: scaleX(-0.2); background-color: blue ;}
+
+
+}
+
+/*@keyframes SecondPlanetRender {
+    0% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    12% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    12.1% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    62% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    62.1% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    
+    100% {
+        background-color: linear-gradient(to left top, green, yellow);
+    }
+    
+}*/
+
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes correct {
+    0% {
+        transform: rotateZ(360deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes hideFirstPlanet {
+    0% {
+        z-index: 999;
+        transform:scale(0.9);
+    }
+    25% {
+        z-index:-999;
+        transform:scale(0.8);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        z-index: 999;
+        transform:scale(0.9);
+    }
+}
+
+@keyframes hideSecondPlanet {
+    0% {
+        z-index: -999;
+        transform: scale(0.95);
+    }
+    50% {
+        z-index: 999;
+    }
+    75% {
+  
+        transform: scale(1);
+    }
+    90% {
+ 
+        transform: scale(0.9);
+    }
+    100% {
+        z-index: -999;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes hideThirdPlanet {
+    0% {
+        z-index: 999;
+        transform: scale(1.1);
+    }
+    60% {
+        z-index: -999;
+        transform: scale(0.8);
+    }
+
+    100% {
+        z-index: 999;
+        transform: scale(1.1);
+    }
+}
+
+
+@media (max-width:768px) {
+
+
+
+#first-planet-container {
+    left:65px;
+
+}
+
+#second-planet-container {
+    left:22.5px;
+    
+}
+
+#third-planet-container {
+    left:35px;
+    top:100px;
+    
+}
+    
+}
